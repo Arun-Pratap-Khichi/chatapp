@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://chatapp-three-mauve.vercel.app/",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
@@ -36,9 +36,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.get("/", (req, res) => {
-  res.send("Backend is running ✅");
-});
 server.listen(PORT, () => {
   console.log("server is running on PORT:" + PORT);
   connectDB();
